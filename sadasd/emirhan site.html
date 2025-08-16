@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emirhan Hakkında</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Comic Neue', cursive;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6f61, #f8e71c);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  .container {
+    padding: 50px 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+
+  p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: #ff6f61;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+  }
+
+  button:hover {
+    background: #ff3b2e;
+    transform: scale(1.1);
+  }
+
+  #popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.85);
+    padding: 40px;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+
+  #popup p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  #close {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #6a11cb;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+  }
+
+  #close:hover {
+    background: #2575fc;
+    transform: scale(1.05);
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Merhaba! Ben Emirhan</h1>
+  <p>26 yaşında bir fotoğrafçı ve video meraklısıyım. Hayatı kare kare yakalamayı, kahve eşliğinde yeni hikayeler keşfetmeyi ve doğada vakit geçirip kamp yapmayı seviyorum. Meraklı ruhum sayesinde her an yeni bir şey öğrenmeye ve deneyimlemeye hazırım ☕📷🏕️</p>
+
+  <button id="coffeeBtn">Benimle kahve içmek istiyorsan tıkla!</button>
+</div>
+
+<div id="popup">
+  <p>Numaram: 0555-065-0770</p>
+  <button id="close">Kapat</button>
+</div>
+
+<audio id="coffeeMusic" loop>
+  <source src="emirhan müzik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const btn = document.getElementById('coffeeBtn');
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('close');
+const music = document.getElementById('coffeeMusic');
+
+btn.addEventListener('click', () => {
+    popup.style.display = 'block';
+    music.play();
+});
+
+closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    music.pause();
+    music.currentTime = 0;
+});
+</script>
+
+</body>
+</html>
